@@ -10,6 +10,7 @@
  *	
  */
 package day2;
+import java.io.IOException;
 //import java.io.IOException;
 import java.util.Scanner;
 class Book{
@@ -82,21 +83,18 @@ class BookStore{
 			return;
 		}
 		System.out.println("Book with ISBN:"+isbn+" not found! Please enter details");
-//		Scanner sc = new Scanner(System.in);
 		String title, author;
 		System.out.println("Title:");
 		title = sc.next(); 
 		System.out.println("Author:");
 		author = sc.next();
 		books[bookCount++] = new Book(title, author, isbn, noOfCopies);
-//		sc.close();
-//		System.out.println("ftydhjujds");
 		return;
 		
 	}
 }
 public class BookStoreApp {
-	public static void main(String args[]) {
+	public static void main(String args[]) throws IOException {
 		BookStore bStore = new BookStore();
 		
 		while(true) {
@@ -116,6 +114,7 @@ public class BookStoreApp {
 						System.out.println("Number of copies:");
 						int noOfCopies = scMain.nextInt();
 						bStore.order(isbn, noOfCopies, scMain);
+						System.out.println(System.in.available());
 						break;
 				case 3: System.out.println("Book Title:");
 						String title = scMain.next();

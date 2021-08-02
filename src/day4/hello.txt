@@ -1,0 +1,1 @@
+hello text is a file made for Byte Stream to read. Good job.Is this working?
