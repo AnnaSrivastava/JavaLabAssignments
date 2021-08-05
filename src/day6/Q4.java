@@ -1,12 +1,10 @@
 package day6;
-/**
- * dOcUemENtatIon ReQUIred
- * 
+/** 
  * Organization: Yamaha Motor Solutions India
  * Project Name:lab assignment
  * Package: day6
  * Class: Q4
- * Description: 
+ * Description: Read doubles data from display the biggest one
  * Created On:01 August 2021
  * @author Ananya Srivastava
  *	
@@ -14,7 +12,9 @@ package day6;
 import java.io.*;
 import java.util.*;
 
+//tester class
 public class Q4 {
+	//tester main method
 	public static void main(String[] args) {
 		 Scanner scan;
 		    File file = new File("C:\\Users\\ve00ym261\\Desktop\\Java Eclipse WorkSpace\\lab assignment\\src\\day6\\data.txt");
@@ -32,5 +32,5 @@ public class Q4 {
 		    } catch (FileNotFoundException e1) {
 		            e1.printStackTrace();
 		    }
-	}
-}
+	}//end-of-main
+}//end-of-class

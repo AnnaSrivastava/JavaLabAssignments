@@ -7,12 +7,11 @@ import java.util.*;
  * 
  * Organization: Yamaha Motor Solutions India
  * Project Name:lab assignment
- * Package: day5
+ * Package: day6
  * Class: Q1
  * Description: 
  * Created On:01 August 2021
  * @author Ananya Srivastava
- *	
  */
 public class Q1 {
 	public static void main(String[] args) {

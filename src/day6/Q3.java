@@ -2,46 +2,60 @@ package day6;
 import java.util.*;
 
 /**
- * dOcUemENtatIon ReQUIred
  * 
  * Organization: Yamaha Motor Solutions India
  * Project Name:lab assignment
  * Package: day6
  * Class: Q3
- * Description: 
+ * Description: create BookCollection and perform various operations
  * Created On:01 August 2021
  * @author Ananya Srivastava
  *	
  */
+//Composite Class Book
 class Book implements Comparable<Book>{
 	private String title;
 	private String author;
+	
+	//constructor
 	Book(String title, String author){
 		this.title = title;
 		this.author = author;
 	}
+	
+	//title getter
 	public String getTitle() {
 		return title;
 	}
+	
+	//title setter
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	
+	//author getter
 	public String getAuthor() {
 		return author;
 	}
+	
+	//author setter
 	public void setAuthor(String author) {
 		this.author = author;
 	}
+	
+	//overriding toString for print()
 	@Override
 	public String toString() {
 		return title+"(:by "+author+")";
 	}
 	
+	//overriding compareTo for sorting
 	 @Override
 	 public int compareTo(Book o) {
 	       return this.getTitle().compareTo(o.getTitle());
 	 }
 	 
+	 //overriding hashCode for contains()
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -51,6 +65,7 @@ class Book implements Comparable<Book>{
 		return result;
 	}
 	
+	//overriding equals for contains()
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -75,13 +90,19 @@ class Book implements Comparable<Book>{
 	 
 	
 }
+
+//BookCollection class that would be implemented
 class BookCollection{
 	private String ownerName;
 	private Set<Book> bookSet;
+	
+	//constructor
 	BookCollection(String ownerName, Set<Book> bookSet){
 		this.ownerName = ownerName;
 		this.bookSet = bookSet;
 	}
+	
+	//overriding toString for print()
 	@Override
 	public String toString() {
 		String ans = ownerName+"\n";
@@ -90,17 +111,24 @@ class BookCollection{
 		}
 		return ans;
 	}
+	
+	//check if a book exists in a collection
 	public boolean checkBook(Book bk) {
 		return bookSet.contains(bk);
 	}
+	
+	//sort the books in lexicographical order
 	public void sort() {
 		List<Book> bookList = new ArrayList<Book>(bookSet);
 		Collections.sort(bookList);
 		bookSet = new HashSet<Book>(bookList);
-	}
-	
+	}	
 }
+
+//tester class
 public class Q3 {
+	
+	//tester method
 	public static void main(String[] args) {
 		Set<Book> booksSet = new HashSet<Book>();
 		booksSet.add(new Book("Java In Depth", "Doug Lea"));
@@ -118,5 +146,5 @@ public class Q3 {
 		
 		System.out.println(bookCollection);
 		
-	}
-}
+	}//end-of-main
+}//end-of-class
